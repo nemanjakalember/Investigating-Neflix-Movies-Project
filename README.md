@@ -1,1 +1,1 @@
-# Investigating-Neflix-Movies-Project
+# Investigating-Netflix-Movies-Project
