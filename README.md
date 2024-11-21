@@ -3,14 +3,14 @@
 
 
 
-
+```
 # Importing pandas and matplotlib
 import pandas as pd
 import matplotlib.pyplot as plt
 
 # Read in the Netflix CSV as a DataFrame
 netflix_df = pd.read_csv("netflix_data.csv")
-
+```
 # Here I'm starting to get familiar with the dataset.
 netflix_df.head(5) 
 
@@ -19,13 +19,13 @@ netflix_df.dtypes
 
 # Identify data patterns. Summarizing key statistics for numerical data in my DataFrame.
 netflix_df.describe() 
-
+```
 # Subset the DataFrame for type "Movie"
 netflix_subset = netflix_df [netflix_df['type'] =='Movie']
 
 # Filter to keep only movies released in the 1990s
 movies_1990s = netflix_subset[(netflix_df['release_year']>=1990) & (netflix_df['release_year']<2000)]
-
+```
 # Visualizing the duration column of my filtered data to see the distribution of movie durations
 # Goal is to ee which bar is the highest and save/assign the duration value.
 
@@ -38,10 +38,10 @@ plt.ylabel('Number of Movies')
 plt.show()
 
 duration = 100
-
+```
 # Filter the data again to keep only the Action movies
 action_movies_1990s = movies_1990s[movies_1990s['genre'] =='Action']
-
+```
 # Use a for loop and a counter to count how many short action movies there were in the 1990s
 short_movie_count = 0
 
@@ -54,7 +54,7 @@ for lab, row in action_movies_1990s.iterrows():
         short_movie_count = short_movie_count
 
 print('The number of short action movies released in the 1990s is ' + str(short_movie_count) + ' in total.')
-
+```
 
 # A quicker way of counting values in a column is to use .sum() on the desired column
 # (action_movies_1990s["duration"] < 90).sum()
